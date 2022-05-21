@@ -2,10 +2,9 @@ namespace ticTacToe;
 
 public enum Options
 {
-    Empty,
+    Empty =1,
     X,
     O,
-   
 }
 
 public enum statuses

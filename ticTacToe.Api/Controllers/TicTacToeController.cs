@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using ticTacToe;
-
 namespace ticTacToe.Api.Controllers;
 
 [ApiController]
@@ -10,13 +8,13 @@ public class TicTacToeController : ControllerBase
 
 
     [HttpGet]
-    public void StartGame()
+    public Options[] Get()
     {
 
-        var start = Startup.InitiateGame();
+        var grid = Startup.InitiateGame();
+        return grid;
 
     }
-
 
 
 
