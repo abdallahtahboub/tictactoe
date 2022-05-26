@@ -2,14 +2,14 @@ namespace ticTacToe;
 
 public enum Options
 {
-    Empty =1,
+    Empty = 1,
     X,
     O,
 }
 
 public enum statuses
 {
-    Won,
+    Won = 1,
 
     Lost,
 
@@ -20,6 +20,6 @@ public enum TileStatus
 {
     Opened,
 
-    Blocked, 
+    Blocked,
 
 }

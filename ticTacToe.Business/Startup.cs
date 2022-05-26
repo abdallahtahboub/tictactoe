@@ -15,47 +15,47 @@ public static class Startup
         var grid = game._Options;
         return grid;
     }
-    public static void GameLoop()
-    {
-        var newgame = Startup.InitiateGame();
+    // public static void GameLoop()
+    // {
+    //     var newgame = Startup.InitiateGame();
 
-        while (isGameInAction)
-        {
-            var check = Movement.CheckGridTile(newgame, X);
-            Movement.SetOptionX(newgame, check, X);
-            while (check == TileStatus.Blocked)
-            {
-                Movement.SetOptionX(newgame, check, X);
-            }
-            var checkresult = Movement.Evaluate(newgame);
-            statuses result = checkresult.Item2;
-            Options playerWon = checkresult.Item1;
-            if (result == statuses.Won)
-            {
-                isGameInAction = false;
-                break;
-            }
-            else
-            {
+    //     while (isGameInAction)
+    //     {
+    //         var check = Movement.CheckGridTile(newgame, X);
+    //         Movement.SetOptionX(newgame, check, X);
+    //         while (check == TileStatus.Blocked)
+    //         {
+    //             Movement.SetOptionX(newgame, check, X);
+    //         }
+    //         var checkresult = Movement.Evaluate(newgame);
+    //         // statuses result = checkresult.Item2;
+    //         // Options playerWon = checkresult.Item1;
+    //         if (result == statuses.Won)
+    //         {
+    //             isGameInAction = false;
+    //             break;
+    //         }
+    //         else
+    //         {
 
-                Movement.SetOptionO(newgame, check, X);
+    //             Movement.SetOptionO(newgame, check, X);
 
-                while (check == TileStatus.Blocked)
-                {
-                    Movement.SetOptionX(newgame, check, X);
-                }
-            }
-            var checkresult2 = Movement.Evaluate(newgame);
-            statuses result_1 = checkresult2.Item2;
-            Options playerWon_1 = checkresult2.Item1;
-            if (result_1 == statuses.Won)
-            {
-                isGameInAction = false;
+    //             while (check == TileStatus.Blocked)
+    //             {
+    //                 Movement.SetOptionX(newgame, check, X);
+    //             }
+    //         }
+    //         var checkresult2 = Movement.Evaluate(newgame);
+    //         statuses result_1 = checkresult2.Item2;
+    //         Options playerWon_1 = checkresult2.Item1;
+    //         if (result_1 == statuses.Won)
+    //         {
+    //             isGameInAction = false;
 
-            }
+    //         }
 
 
-        }
+    //     }
 
-    }
+    // }
 }
