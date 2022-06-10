@@ -1,13 +1,14 @@
+using ticTacToe.Data;
 
-namespace ticTacToe;
+namespace ticTacToe.Bussiness;
 
 public static class Movement
 {
     public static int Turn = 0;
 
-    public static TileStatus CheckGridTile(Options[,] options, int x, int y)
+    public static TileStatus CheckGridTile(Options[] options, int x)
     {
-        if (options[x, y] == Options.Empty)
+        if (options[x] == Options.Empty)
         {
             return TileStatus.Opened;
         }
@@ -17,11 +18,11 @@ public static class Movement
         }
     }
 
-    public static void SetOptionX(Options[,] options, TileStatus status, int x, int y)
+    public static void SetOptionX(Options[] options, TileStatus status, int x)
     {
         if (status == TileStatus.Opened)
         {
-            options[x, y] = Options.X;
+            options[x] = Options.X;
         }
         else
         {
@@ -29,62 +30,112 @@ public static class Movement
         }
     }
 
-    public static void SetOptionO(Options[,] options, TileStatus status, int x, int y)
+    public static void SetOptionO(Options[] options, TileStatus status, int x)
     {
         if (status == TileStatus.Opened)
         {
-            options[x, y] = Options.O;
+            options[x] = Options.O;
         }
     }
 
-    public static (Options, statuses) Evaluate(Options[,] options)
+    public static Result Evaluate(Options[] options)
     {
-        // First row cobination.
-        if (options[0, 0] == Options.O && options[1, 0] == Options.O && options[2, 0] == Options.O)
-            return (Options.O, statuses.Won);
-        // Second row cobination.
-        if (options[0, 1] == Options.O && options[1, 1] == Options.O && options[2, 1] == Options.O)
-            // Third row combination.
-            return (Options.O, statuses.Won);
-        if (options[0, 2] == Options.O && options[1, 2] == Options.O && options[2, 2] == Options.O)
-            return (Options.O, statuses.Won);
-        // First column combination.
-        if (options[0, 0] == Options.O && options[0, 1] == Options.O && options[0, 2] == Options.O)
-            return (Options.O, statuses.Won);
-        // Second column combination.    
-        if (options[1, 0] == Options.O && options[1, 1] == Options.O && options[1, 2] == Options.O)
-            return (Options.O, statuses.Won);
-        // Third column combination.
-        if (options[2, 0] == Options.O && options[2, 1] == Options.O && options[2, 2] == Options.O)
-            return (Options.O, statuses.Won);
-        // diagonal win.
-        if (options[0, 0] == Options.O && options[1, 1] == Options.O && options[2, 2] == Options.O)
-            return (Options.O, statuses.Won);
-        // X combination
-        // First row cobination.
-        if (options[0, 0] == Options.X && options[1, 0] == Options.X && options[2, 0] == Options.X)
-            return (Options.O, statuses.Won);
-        // Second row cobination.
-        if (options[0, 1] == Options.X && options[1, 1] == Options.X && options[2, 1] == Options.X)
-            // Third row combination.
-            return (Options.X, statuses.Won);
-        if (options[0, 2] == Options.X && options[1, 2] == Options.X && options[2, 2] == Options.X)
-            return (Options.X, statuses.Won);
-        // First column combination.
-        if (options[0, 0] == Options.X && options[0, 1] == Options.X && options[0, 2] == Options.X)
-            return (Options.X, statuses.Won);
-        // Second column combination.    
-        if (options[1, 0] == Options.X && options[1, 1] == Options.X && options[1, 2] == Options.X)
-            return (Options.X, statuses.Won);
-        // Third column combination.
-        if (options[2, 0] == Options.X && options[2, 1] == Options.X && options[2, 2] == Options.X)
-            return (Options.X, statuses.Won);
-        // diagonal win.
-        if (options[0, 0] == Options.X && options[1, 1] == Options.X && options[2, 2] == Options.X)
-            return (Options.X, statuses.Won);
+        Result result = new Result();
+
+        if (options[1] == Options.O && options[2] == Options.O && options[3] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[4] == Options.O && options[5] == Options.O && options[6] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[7] == Options.O && options[8] == Options.O && options[9] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[1] == Options.O && options[4] == Options.O && options[7] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        } 
+        if (options[2] == Options.O && options[5] == Options.O && options[8] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[3] == Options.O && options[6] == Options.O && options[9] == Options.O)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }     
+        if (options[1] == Options.X && options[2] == Options.X && options[3] == Options.X)
+        {
+            result.Player = Options.O;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[4] == Options.X && options[5] == Options.X && options[6] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[7] == Options.X && options[8] == Options.X && options[9] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+        if (options[1] == Options.X && options[4] == Options.X && options[7] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+        
+        if (options[2] == Options.X && options[5] == Options.X && options[8] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+        
+        if (options[3] == Options.X && options[6] == Options.X && options[9] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+       
+        if (options[3] == Options.X && options[5] == Options.X && options[7] == Options.X)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
+    
+        if (options[1] == Options.O && options[5] == Options.O && options[9] == Options.O)
+        {
+            result.Player = Options.X;
+            result.Status = statuses.Won;
+            return result;
+        }
 
         else
-            return (Options.Empty, statuses.Tied);
+        {
+            result.Status = statuses.Tied;
+            return result;
+        }
     }
     public static Options ChangePLayer(Options player_1, Options player_2)
     {

@@ -1,24 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-using ticTacToe;
-
 namespace ticTacToe.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class TicTacToeController : ControllerBase
 {
+    public Board _Board;
 
-
-    [HttpGet]
-    public void StartGame()
+    public TicTacToeController()
     {
-
-        var start = Startup.InitiateGame();
-
+        _Board = new Board();
+        _Board._Options[0]= Options.X;
+        _Board._Options[1]= Options.O;
+        _Board._Options[2]= Options.O;
+        _Board._Options[3]= Options.O;
+        _Board._Options[4]= Options.X;
     }
-
-
-
-
+    [HttpGet("~/PutGrid")]
+    public ActionResult<Result> EvaluateGrid()
+    {   return Movement.Evaluate(_Board._Options);
+    }
 
 }

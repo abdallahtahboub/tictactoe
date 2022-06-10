@@ -1,16 +1,14 @@
-namespace ticTacToe;
-
+using  ticTacToe.Data;
 public enum Options
 {
-    Empty,
+    Empty = 1,
     X,
     O,
-   
 }
 
 public enum statuses
 {
-    Won,
+    Won = 1,
 
     Lost,
 
@@ -21,6 +19,6 @@ public enum TileStatus
 {
     Opened,
 
-    Blocked, 
+    Blocked,
 
 }
