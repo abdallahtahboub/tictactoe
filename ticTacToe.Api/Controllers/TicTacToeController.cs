@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using ticTacToe.Data;
+using ticTacToe.Bussiness;
+
 namespace ticTacToe.Api.Controllers;
 
 [ApiController]

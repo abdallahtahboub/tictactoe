@@ -1,4 +1,4 @@
-﻿namespace ticTacToe.Bussiness;
+﻿namespace ticTacToe.Data;
 public class Board
 {
     public Options[] _Options = new Options[9];
