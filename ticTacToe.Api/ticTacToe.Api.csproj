@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ticTacToe.Business\ticTacToe.Business.csproj" />
+    <ProjectReference Include="..\ticTacToe.Data\ticTacToe.Data.csproj" />
   </ItemGroup>
 
 </Project>

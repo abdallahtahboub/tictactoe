@@ -65,7 +65,7 @@ public static class Movement
             result.Player = Options.O;
             result.Status = statuses.Won;
             return result;
-        } 
+        }
         if (options[2] == Options.O && options[5] == Options.O && options[8] == Options.O)
         {
             result.Player = Options.O;
@@ -77,7 +77,7 @@ public static class Movement
             result.Player = Options.O;
             result.Status = statuses.Won;
             return result;
-        }     
+        }
         if (options[1] == Options.X && options[2] == Options.X && options[3] == Options.X)
         {
             result.Player = Options.O;
@@ -102,28 +102,28 @@ public static class Movement
             result.Status = statuses.Won;
             return result;
         }
-        
+
         if (options[2] == Options.X && options[5] == Options.X && options[8] == Options.X)
         {
             result.Player = Options.X;
             result.Status = statuses.Won;
             return result;
         }
-        
+
         if (options[3] == Options.X && options[6] == Options.X && options[9] == Options.X)
         {
             result.Player = Options.X;
             result.Status = statuses.Won;
             return result;
         }
-       
+
         if (options[3] == Options.X && options[5] == Options.X && options[7] == Options.X)
         {
             result.Player = Options.X;
             result.Status = statuses.Won;
             return result;
         }
-    
+
         if (options[1] == Options.O && options[5] == Options.O && options[9] == Options.O)
         {
             result.Player = Options.X;
