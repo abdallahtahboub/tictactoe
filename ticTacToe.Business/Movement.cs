@@ -1,5 +1,6 @@
+using ticTacToe.Data;
 
-namespace ticTacToe;
+namespace ticTacToe.Bussiness;
 
 public static class Movement
 {

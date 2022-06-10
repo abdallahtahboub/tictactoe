@@ -1,5 +1,4 @@
-namespace ticTacToe;
-
+using  ticTacToe.Data;
 public enum Options
 {
     Empty = 1,

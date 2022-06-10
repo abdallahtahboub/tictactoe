@@ -10,24 +10,15 @@ public class TicTacToeController : ControllerBase
     public TicTacToeController()
     {
         _Board = new Board();
+        _Board._Options[0]= Options.X;
+        _Board._Options[1]= Options.O;
+        _Board._Options[2]= Options.O;
+        _Board._Options[3]= Options.O;
+        _Board._Options[4]= Options.X;
     }
-
-    [HttpGet("~/getGrid")]
-    public ActionResult<Options[]> GetGrid()
-    {
-        return Startup.InitiateGame(); ;
+    [HttpGet("~/PutGrid")]
+    public ActionResult<Result> EvaluateGrid()
+    {   return Movement.Evaluate(_Board._Options);
     }
-
-
-
-    [HttpGet("~/Evaluate")]
-    public ActionResult<Result> GetEvalute()
-    {
-        var op = _Board._Options;
-        op[1] = Options.X;
-        var x = Movement.Evaluate(op);
-        return x;
-    }
-
 
 }

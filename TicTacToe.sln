@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ticTacToe", "ticTacToe.Business\ticTacToe.csproj", "{C8D029CD-04E5-470D-8E7A-A5305C320FDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ticTacToe.Business", "ticTacToe.Business\ticTacToe.Business.csproj", "{C8D029CD-04E5-470D-8E7A-A5305C320FDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ticTacToe.Api", "ticTacToe.Api\ticTacToe.Api.csproj", "{23D8375A-BBBD-44F7-A9F7-66D594B0FA09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ticTacToe.Data", "ticTacToe.Data\ticTacToe.Data.csproj", "{8879FFCF-562E-436E-9C21-5335BCA83B11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{23D8375A-BBBD-44F7-A9F7-66D594B0FA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23D8375A-BBBD-44F7-A9F7-66D594B0FA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23D8375A-BBBD-44F7-A9F7-66D594B0FA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8879FFCF-562E-436E-9C21-5335BCA83B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8879FFCF-562E-436E-9C21-5335BCA83B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8879FFCF-562E-436E-9C21-5335BCA83B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8879FFCF-562E-436E-9C21-5335BCA83B11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
