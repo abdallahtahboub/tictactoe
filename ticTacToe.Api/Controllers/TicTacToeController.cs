@@ -8,20 +8,25 @@ namespace ticTacToe.Api.Controllers;
 [Route("[controller]")]
 public class TicTacToeController : ControllerBase
 {
-    public Board _Board;
 
+    public Board _Board;
     public TicTacToeController()
     {
-        _Board = new Board();
-        _Board._Options[0]= Options.X;
-        _Board._Options[1]= Options.O;
-        _Board._Options[2]= Options.O;
-        _Board._Options[3]= Options.O;
-        _Board._Options[4]= Options.X;
+
+          _Board = new Board();
+
     }
-    [HttpGet("~/PutGrid")]
-    public ActionResult<Result> EvaluateGrid()
-    {   return Movement.Evaluate(_Board._Options);
+    [HttpPost("~/PutGrid")]
+    public ActionResult<Result> EvaluateGrid(Options[] options)
+    {
+        
+             _Board._Options = options;
+             var result = Movement.Evaluate(options);
+             return result;
+               
+       
+
+
     }
 
 }

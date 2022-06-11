@@ -80,7 +80,7 @@ public static class Movement
         }
         if (options[1] == Options.X && options[2] == Options.X && options[3] == Options.X)
         {
-            result.Player = Options.O;
+            result.Player = Options.X;
             result.Status = statuses.Won;
             return result;
         }
